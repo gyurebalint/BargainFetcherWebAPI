@@ -10,5 +10,6 @@ namespace BargainFetcher.Data
         Product GetProductById(int id);
         void CreateProduct(Product product);
         void UpdateProducts(Product product);
+        void DeleteProduct(Product product);
     }
 }

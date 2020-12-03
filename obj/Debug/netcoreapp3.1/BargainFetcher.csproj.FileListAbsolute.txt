@@ -1,6 +1,5 @@
 C:\Users\Gyure Balint\Documents\MyOwn\Repos\WebAPI\BargainFetcher\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\Gyure Balint\Documents\MyOwn\Repos\WebAPI\BargainFetcher\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Users\Gyure Balint\Documents\MyOwn\Repos\WebAPI\BargainFetcher\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\Gyure Balint\Documents\MyOwn\Repos\WebAPI\BargainFetcher\bin\Debug\netcoreapp3.1\BargainFetcher.exe
 C:\Users\Gyure Balint\Documents\MyOwn\Repos\WebAPI\BargainFetcher\bin\Debug\netcoreapp3.1\BargainFetcher.deps.json
 C:\Users\Gyure Balint\Documents\MyOwn\Repos\WebAPI\BargainFetcher\bin\Debug\netcoreapp3.1\BargainFetcher.runtimeconfig.json
@@ -63,3 +62,7 @@ C:\Users\Gyure Balint\Documents\MyOwn\Repos\WebAPI\BargainFetcher\bin\Debug\netc
 C:\Users\Gyure Balint\Documents\MyOwn\Repos\WebAPI\BargainFetcher\obj\Debug\netcoreapp3.1\BargainFetcher.csproj.CopyComplete
 C:\Users\Gyure Balint\Documents\MyOwn\Repos\WebAPI\BargainFetcher\bin\Debug\netcoreapp3.1\AutoMapper.dll
 C:\Users\Gyure Balint\Documents\MyOwn\Repos\WebAPI\BargainFetcher\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Gyure Balint\Documents\MyOwn\Repos\WebAPI\BargainFetcher\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Gyure Balint\Documents\MyOwn\Repos\WebAPI\BargainFetcher\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Server.Kestrel.Https.dll
+C:\Users\Gyure Balint\Documents\MyOwn\Repos\WebAPI\BargainFetcher\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll
+C:\Users\Gyure Balint\Documents\MyOwn\Repos\WebAPI\BargainFetcher\obj\Debug\netcoreapp3.1\scopedcss\bundle\BargainFetcher.styles.css

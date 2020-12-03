@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json.Serialization;
 
 namespace BargainFetcher
 {
@@ -31,7 +32,9 @@ namespace BargainFetcher
             services.AddDbContext<BargainFetcherContext>(opt => opt.UseSqlServer
                 (Configuration.GetConnectionString("BargainFetcherConnection")));
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(s => {
+                s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            });
             // services.AddScoped<IBargainFetcherRepo, MockBargainFetcherRepo>();
             services.AddScoped<IBargainFetcherRepo, SqlBargainFetcherRepo>();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

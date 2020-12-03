@@ -3,6 +3,7 @@ using AutoMapper;
 using BargainFetcher.Data;
 using BargainFetcher.Dtos;
 using BargainFetcher.Models;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BargainFetcher.Controllers
@@ -51,8 +52,70 @@ namespace BargainFetcher.Controllers
 
             var productReadDto = _mapper.Map<ProductReadDto>(productModel);
 
-            return CreatedAtRoute(nameof(GetProductById), new {Id = productReadDto.ProductID}, productReadDto);
+            return CreatedAtRoute(nameof(GetProductById), new { Id = productReadDto.ProductID }, productReadDto);
             // return Ok(productReadDto);
+        }
+
+        //PUT api/products/{id}
+        [HttpPut("{id}")]
+        public ActionResult UpdateProduct(int id, ProductUpdateDto productUpdateDto)
+        {
+            var productModelFromRepo = _repository.GetProductById(id);
+            if (productModelFromRepo == null)
+            {
+                return NotFound();
+            }
+
+            _mapper.Map(productUpdateDto, productModelFromRepo);
+
+            _repository.UpdateProducts(productModelFromRepo);
+
+            _repository.SaveChanges();
+
+            return NoContent();
+        }
+
+        //PATCH api/products/{id}
+        [HttpPatch("{id}")]
+        public ActionResult PartialCommandUpdate(int id, JsonPatchDocument<ProductUpdateDto> patchDoc)
+        {
+            var productModelFromRepo = _repository.GetProductById(id);
+            if (productModelFromRepo == null)
+            {
+                return NotFound();
+            }
+
+            var productToPatch = _mapper.Map<ProductUpdateDto>(productModelFromRepo);
+            patchDoc.ApplyTo(productToPatch, ModelState);
+
+            if(!TryValidateModel(productToPatch))
+            {
+                return ValidationProblem(ModelState);
+            }
+
+            _mapper.Map(productToPatch, productModelFromRepo);
+            _repository.UpdateProducts(productModelFromRepo);
+            
+            _repository.SaveChanges();
+
+            return NoContent();
+        }
+
+        //DELETE api/products/{id}
+        [HttpDelete("{id}")]
+        public ActionResult DeleteProduct(int id)
+        {
+            var productModelFromRepo = _repository.GetProductById(id);
+            if (productModelFromRepo == null)
+            {
+                return NotFound();
+            }
+
+            _repository.DeleteProduct(productModelFromRepo);
+            _repository.SaveChanges();
+
+            return NoContent();
+
         }
     }
 }

@@ -15,6 +15,11 @@ namespace BargainFetcher.Data
             throw new System.NotImplementedException();
         }
 
+        public void DeleteProduct(Product product)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public IEnumerable<Product> GetAllProducts()
         {
             var products = new List<Product>

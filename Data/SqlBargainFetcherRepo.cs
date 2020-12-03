@@ -17,11 +17,20 @@ namespace BargainFetcher.Data
 
         public void CreateProduct(Product product)
         {
-            if(product == null)
+            if (product == null)
             {
                 throw new ArgumentNullException(nameof(product));
             }
             _context.Products.Add(product);
+        }
+
+        public void DeleteProduct(Product product)
+        {
+            if (product == null)
+            {
+                throw new ArgumentNullException(nameof(product));
+            }
+            _context.Products.Remove(product);
         }
 
         public IEnumerable<Product> GetAllProducts()
