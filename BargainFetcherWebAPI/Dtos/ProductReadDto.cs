@@ -9,6 +9,8 @@ namespace BargainFetcher.Dtos
         [Key]
         public int ProductID { get; set; }
         public string ProductCode { get; set; }
+        public string WebshopName{get;set;}
+
         public string Title { get; set; }
         public string Brand { get; set; }
         public string Model { get; set; }
