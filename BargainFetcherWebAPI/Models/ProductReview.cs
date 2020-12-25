@@ -10,7 +10,7 @@ namespace BargainFetcher.Models
         public int Stars { get; set; }
         public string Text { get; set; }
         public int ProductID { get; set; }
-        public Product Product { get; set; }
+        public virtual Product Product { get; set; }
 
         public override string ToString()
         {

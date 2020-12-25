@@ -20,7 +20,9 @@ namespace BargainFetcher.Models
         //This prop was of type decimal
         public double StarsAverage { get; set; }
         public string Link { get; set; }
-        public ProductDescription Description { get; set; }
+        public string CategoryName { get; set; }
+        public string CategoryLink { get; set; }
+        public virtual ProductDescription Description { get; set; }
         public List<ProductDetail> Details { get; set; }
         public List<ProductReview> Reviews { get; set; }
         public List<ProductImage> Images { get; set; }

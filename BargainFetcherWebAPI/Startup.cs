@@ -18,6 +18,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OData;
 using Microsoft.OData.Edm;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
 
@@ -40,6 +41,8 @@ namespace BargainFetcher
 
             services.AddControllers().AddNewtonsoftJson(s =>
             {
+                s.SerializerSettings.Formatting = Formatting.Indented;
+                s.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
                 s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             });
             // services.AddScoped<IBargainFetcherRepo, MockBargainFetcherRepo>();

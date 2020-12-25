@@ -19,6 +19,8 @@ namespace BargainFetcher.Dtos
         //This prop was of type decimal
         public double StarsAverage { get; set; }
         public string Link { get; set; }
+        public string CategoryName { get; set; }
+        public string CategoryLink { get; set; }
         public ProductDescription Description { get; set; }
         public List<ProductDetail> Details { get; set; }
         public List<ProductReview> Reviews { get; set; }

@@ -28,7 +28,7 @@ namespace BargainFetcher.Controllers
         public ActionResult<IEnumerable<ProductReadDto>> GetAllProducts()
         {
             var productItems = _repository.GetAllProducts();
-
+            
             return Ok(_mapper.Map<IEnumerable<ProductReadDto>>(productItems));
         }
 

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using BargainFetcher.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace BargainFetcher.Data
 {
@@ -35,12 +36,25 @@ namespace BargainFetcher.Data
 
         public IEnumerable<Product> GetAllProducts()
         {
-            return _context.Products.ToList();
+            return _context.Products
+            .Include(x => x.Reviews)
+            .Include(y => y.Details)
+            .Include(z => z.Images)
+            .Include(u => u.Description)
+            .AsSplitQuery()
+            .ToList();
         }
 
         public Product GetProductById(int id)
         {
-            return _context.Products.FirstOrDefault(predicate => predicate.ProductID == id);
+            return _context.Products
+            .Include(x => x.Reviews)
+            .Include(y => y.Details)
+            .Include(z => z.Images)
+            .Include(u => u.Description)
+            .AsSplitQuery()
+            .FirstOrDefault(predicate => predicate.ProductID == id);
+            //FirstOrDefault(predicate => predicate.ProductID == id);//.Include(y => y.Details).Include(z => z.Images).Include(u => u.Description).AsSplitQuery().FirstOrDefault(predicate => predicate.ProductID == id);
         }
 
         public bool SaveChanges()

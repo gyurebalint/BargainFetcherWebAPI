@@ -8,6 +8,6 @@ namespace BargainFetcher.Models
         public string Text { get; set; }
         public string[] ImagesURI { get; set; }
         public int ProductID { get; set; }
-        public Product Product { get; set; }
+        public virtual Product Product { get; set; }
     }
 }
