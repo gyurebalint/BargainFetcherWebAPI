@@ -6,7 +6,7 @@ Endpoint structure:
 GET all  
 http://bargainfetcherwebapi.azurewebsites.net/api/products  
 GET certain  
-http://bargainfetcherwebapi.azurewebsites.net/api/products/1  
+http://bargainfetcherwebapi.azurewebsites.net/api/products/106  
 POST  
 http://bargainfetcherwebapi.azurewebsites.net/api/products  
 the object is in the body  
